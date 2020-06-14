@@ -3,10 +3,11 @@ import Random_Walk as RW
 
 while True:
 
-	rw = RW.RandomWalk() # making an instance of the Random_Walk class which will have default 50000 data points in the walk 
+	rw = RW.RandomWalk(num_points=50000) # making an instance of the Random_Walk class which will have default 50000 data points in the walk 
 	rw.fill_walk() # updates the contents of the class instance data attributes 
 	point_numbers=list(range(rw.num_points))
-	plt.scatter(rw.x_values , rw.y_values, c=point_numbers, cmap=plt.cm.Blues, edgecolor='none', s=15)
+	plt.figure(figsize=(10,6))
+	plt.scatter(rw.x_values , rw.y_values, c=point_numbers, cmap=plt.cm.Blues, edgecolor='none', s=1)
 	# emphasizing the first and last points 
 	plt.scatter(0,0,c='green', edgecolors='none', s=100 ) 
 	plt.scatter(rw.x_values[-1], rw.y_values[-1], c = 'red', edgecolor= 'none', s = 100) 
